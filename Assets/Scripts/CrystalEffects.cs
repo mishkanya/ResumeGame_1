@@ -5,7 +5,7 @@ public class CrystalEffects : MonoBehaviour
 { 
     public bool UseLevitationEffect, UseRotationEffect;
     
-    [SerializeField] private UnityEvent TakeEffect;
+    public UnityEvent TakeEffect;
     private float _yPos;
     private bool _moveUp = true;
     private const float _rotationSpeed = 80f;
@@ -58,5 +58,4 @@ public class CrystalEffects : MonoBehaviour
         TakeEffect.Invoke();
         Hider();
     }
-
 }

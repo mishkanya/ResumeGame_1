@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-public class SceneObjectContainer : MonoBehaviour
+public static class SceneObjectContainer
 {
     private static float _playerScore = 0;
     private static GameObject _player;
+    private static GameObject _startText;
     private static Text _scoreBar;
     public static GameObject Player 
     {
@@ -15,12 +16,22 @@ public class SceneObjectContainer : MonoBehaviour
             return _player;
         }
     }
+    public static GameObject StartText 
+    {
+        get 
+        {
+            if(_startText == null){
+                _startText = GameObject.Find("StartText");
+            }
+            return _startText;
+        }
+    }
     private static Text ScoreBar 
     {
         get 
         {
             if(_scoreBar == null){
-                _scoreBar = GameObject.Find("Player").GetComponent<Text>();
+                _scoreBar = GameObject.Find("ScoreBar").GetComponent<Text>();
             }
             return _scoreBar;
         }
@@ -32,6 +43,10 @@ public class SceneObjectContainer : MonoBehaviour
             _playerScore += value;
             ScoreBar.text = _playerScore.ToString();
         }
+    }
+    public static void OnSceneReload(){
+        ScoreBar.text = "0";
+        _playerScore = 0;
     }
     
 }

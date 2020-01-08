@@ -44,11 +44,14 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
-  <ItemGroup>     <Compile Include="Assets\Scripts\ChunkController.cs" />
+  <ItemGroup>     <Compile Include="Assets\Scripts\Controllers\ChunkController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\ExitController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\PlayerController.cs" />
      <Compile Include="Assets\Scripts\CrystalEffects.cs" />
      <Compile Include="Assets\Scripts\CrystalTake.cs" />
-     <Compile Include="Assets\Scripts\ExitController.cs" />
+     <Compile Include="Assets\Scripts\DeathZone.cs" />
      <Compile Include="Assets\Scripts\mainCamera.cs" />
+     <Compile Include="Assets\Scripts\PlaneEffect.cs" />
      <Compile Include="Assets\Scripts\PlanePlacer.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\SceneObjectContainer.cs" />

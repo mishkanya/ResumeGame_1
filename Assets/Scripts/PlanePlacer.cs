@@ -1,21 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlanePlacer : MonoBehaviour
 {
     public GameObject[] Crystals;
-    private const float _placeHeight = 0.25f;
+    private const float _placeHeight = 0.5f;
     private void Start()
     {
         if(Random.value > 0.80f)
         {
+            Vector3 PlacePosition = transform.position;
+            PlacePosition.y += _placeHeight;
             GameObject Crystal = Instantiate(
                 Crystals[Random.Range(0,Crystals.Length - 1)],
-                new Vector3(transform.position.x,transform.position.y + _placeHeight, transform.position.z),
+                PlacePosition,
                 transform.rotation
             );
-            Crystal.transform.SetParent(transform);
+            Crystal.transform.SetParent(transform.parent);
         }
     }
 }
